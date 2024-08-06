@@ -5,7 +5,8 @@ import chandansharma_spring_boot.projects_spring.Presentation.UserDetails;
 
 import chandansharma_spring_boot.projects_spring.Presentation.chandansharma;
 import chandansharma_spring_boot.projects_spring.Presentation.newEntry;
-import chandansharma_spring_boot.projects_spring.Presentation.studentsDetails;
+import chandansharma_spring_boot.projects_spring.Presentation.studentDetails;
+
 import chandansharma_spring_boot.projects_spring.Repository.newentry;
 import chandansharma_spring_boot.projects_spring.Service.UsersData;
 import chandansharma_spring_boot.projects_spring.Service.chandanData;
@@ -117,7 +118,7 @@ public class controller {
     }
 
     @PostMapping("/api/adds")
-    public String adding(@RequestBody studentsDetails studentsDetails){
+    public String adding(@RequestBody studentDetails studentsDetails){
         studentsData.save(studentsDetails);
         return "the data is saved sucessfull";
     }

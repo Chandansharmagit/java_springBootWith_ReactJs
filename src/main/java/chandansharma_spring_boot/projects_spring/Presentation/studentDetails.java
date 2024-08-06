@@ -1,15 +1,12 @@
 package chandansharma_spring_boot.projects_spring.Presentation;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class studentsDetails {
+@Table(name = "chandan_deepika_details")
+public class studentDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,19 +15,18 @@ public class studentsDetails {
     private String email;
     private String phone;
     private String parentname;
-    private int parentcontact;
+    private String parentcontact;
     private String address;
     private String previousschool;
     private float gpa;
     private String password;
     private String cpassword;
 
-
-    public studentsDetails(){
+    public studentDetails(){
 
     }
 
-    public studentsDetails(int id, String firstname, String lastname, String email, String phone, String parentname, int parentcontact, String address, String previousschool, float gpa, String password, String cpassword) {
+    public studentDetails(int id, String firstname, String lastname, String email, String phone, String parentname, String parentcontact, String address, String previousschool, float gpa, String password, String cpassword) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -93,11 +89,11 @@ public class studentsDetails {
         this.parentname = parentname;
     }
 
-    public int getParentcontact() {
+    public String getParentcontact() {
         return parentcontact;
     }
 
-    public void setParentcontact(int parentcontact) {
+    public void setParentcontact(String parentcontact) {
         this.parentcontact = parentcontact;
     }
 
@@ -140,4 +136,8 @@ public class studentsDetails {
     public void setCpassword(String cpassword) {
         this.cpassword = cpassword;
     }
+
+    // Getters and setters
+
+
 }
